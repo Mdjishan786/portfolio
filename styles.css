@@ -56,8 +56,6 @@ a:hover {
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid #00bcd4;
-
-  /* ===== Side light effect ===== */
   box-shadow:
     0 0 15px rgba(0, 188, 212, 0.6),
     0 0 25px rgba(255, 64, 129, 0.4),
@@ -80,7 +78,6 @@ a:hover {
   50%  { left: 50%; }
   100% { left: -50%; }
 }
-
 .profile-pic {
   width: 100%;
   height: 100%;
@@ -203,10 +200,10 @@ a:hover {
   gap: 12px;
   max-width: 600px;
   margin: auto;
-  border: 1px solid #00bcd4; /* Wapas original color */
+  border: 1px solid #00bcd4;
   border-radius: 12px;
   padding: 20px;
-  background: #2c2c2c; /* box background */
+  background: #2c2c2c;
 }
 input, textarea {
   padding: 12px;
@@ -237,4 +234,64 @@ footer {
   color: #bbbbbb;
 }
 
-/* ===== RESPONSIVE =====*
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Mobile-first approach */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar a {
+    margin: 8px 0;
+  }
+  .hero {
+    padding: 80px 20px;
+  }
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  .profile-pic-container {
+    width: 150px;
+    height: 150px;
+  }
+  .section {
+    padding: 40px 10px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-form {
+    padding: 15px;
+  }
+  input, textarea {
+    width: 100%;
+  }
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet and larger devices */
+@media only screen and (min-width: 769px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .hero {
+    padding: 100px 20px;
+  }
+  .profile-pic-container {
+    width: 180px;
+    height: 180px;
+  }
+  .section {
+    padding: 60px 20px;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .contact-form {
+    padding: 20px;
+  }
+}
