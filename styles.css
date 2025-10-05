@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0e0e12;
+  color: #e4e4e4;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(20, 20, 30, 0.85);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00fff0, #ff61d2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ddd;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00fff0;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  margin-top: 80px;
+  padding: 40px 20px;
+}
+
+.profile-pic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background-image: linear-gradient(135deg, #00fff0, #ff61d2);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0 0 20px rgba(255, 97, 210, 0.3);
+}
+
+.hero h1 {
+  margin-top: 25px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00fff0, #ff61d2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #bbb;
+  margin: 15px 0 30px;
+}
+
+/* ===== BUTTONS ===== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #00fff0, #ff61d2);
+  color: #111;
+}
+
+.btn.primary:hover {
+  opacity: 0.8;
+}
+
+.btn.outline {
+  border: 2px solid #00fff0;
+  color: #00fff0;
+}
+
+.btn.outline:hover {
+  background: #00fff0;
+  color: #111;
+}
+
+/* ===== SECTIONS ===== */
+.section, .about {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #00fff0, #ff61d2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.about p, .section p, li {
+  color: #ccc;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.personal-details h3 {
+  margin-top: 20px;
+  color: #00fff0;
+}
+
+.personal-details ul li strong {
+  color: #ff61d2;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: rgba(20, 20, 30, 0.9);
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
