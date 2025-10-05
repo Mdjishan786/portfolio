@@ -1,145 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Md Jishan | Portfolio</title>
-  <link rel="stylesheet" href="stylse.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jishan Shop</title>
+  <link rel="stylesheet" href="stylse.css">
 </head>
 <body>
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar">
-    <div class="logo">Md <span>Jishan</span></div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header>
+    <div class="brand">
+      <img id="user-display-photo" src="https://i.ibb.co/rtfzYsd1" alt="User Photo">
+      <span id="user-display">Guest</span>
+    </div>
+    <button id="login-btn">Login / Profile</button>
   </header>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero" id="home">
-    <div class="profile-pic-container">
-      <img src="https://i.postimg.cc/m1w3F6Lq/profile.jpg" alt="Md Jishan" class="profile-pic" />
-    </div>
-    <h1>Hi, I'm <span class="highlight">Md Jishan</span></h1>
-    <p class="tagline">Full-Stack Developer | AI/ML Explorer | Problem Solver</p>
-    <div class="buttons">
-      <a href="#projects" class="btn primary">View My Work</a>
-      <a href="#contact" class="btn outline">Get In Touch</a>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section class="section about" id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a passionate <strong>Computer Science student</strong> specializing in
-      <strong>AI & Web Development</strong>. I enjoy solving real-world problems
-      through technology and continuously improving my skills.
-    </p>
-    <div class="section-box">
-      <h3>Personal Details</h3>
-      <ul>
-        <li>Date of Birth: January 01, 2007</li>
-        <li>Gender: Male</li>
-        <li>Nationality: Indian</li>
-        <li>Religion: Islam</li>
-        <li>Category: General</li>
-        <li>PWD Status: No</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== EDUCATION ===== -->
-  <section class="section" id="education">
-    <h2>Education</h2>
-    <div class="section-box">
-      <ul>
-        <li>10th (BSEB, Patna): 55.4% — Year: 2021</li>
-        <li>Diploma (MANUU): 68.8% — Year: 2024</li>
-        <li>B.tech (KNU): 66.1% — Year: 2024-2027</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section class="section" id="skills">
-    <h2>Skills & Expertise</h2>
-    <div class="skills-grid">
-      <div class="skills-box">
-        <h3>💻 Programming Languages</h3>
-        <div class="skills-list">
-          <span>C programming language </span><span> Python </span><span>C++</span><span>Java</span><span>JavaScript</span>
+  <main>
+    <section class="dashboard">
+      <div class="flip-card" id="profile-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">Profile</div>
+          <div class="flip-card-back">Click to open Profile</div>
         </div>
       </div>
-      <div class="skills-box">
-        <h3>🌐 Web Development</h3>
-        <div class="skills-list">
-          <span>HTML</span><span>CSS</span><span>React</span><span>Node.js</span>
+      <div class="flip-card" id="cart-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">Cart</div>
+          <div class="flip-card-back">Click to open Cart</div>
         </div>
       </div>
-      <div class="skills-box">
-        <h3>🤖 AI / ML Tools</h3>
-        <div class="skills-list">
-          <span>NumPy</span><span>Pandas</span><span>TensorFlow</span><span>Scikit-learn</span>
+      <div class="flip-card" id="checkout-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">Checkout</div>
+          <div class="flip-card-back">Click to Checkout</div>
         </div>
       </div>
-      <div class="skills-box">
-        <h3>🛠 Other Tools</h3>
-        <div class="skills-list">
-          <span>Git</span><span>VS Code</span><span>Figma</span><span>Ms office</span><span>Data entry</span>
+      <div class="flip-card" id="support-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">Support</div>
+          <div class="flip-card-back">Contact / Complaint</div>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="flip-card" id="review-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">Reviews</div>
+          <div class="flip-card-back">See product reviews</div>
+        </div>
+      </div>
+    </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="section-box">
-      <ul>
-        <li>Student data: Online Hostel Management System using HTML, CSS, JavaScript</li>
-        <li>Product cell:AN EXPLORATION OF SMARTPHONES, AND GADGETS WEBSITE USING WORDPRESS-OVERVIEW</li>
-      </ul>
-    </div>
-  </section>
+    <section class="products-section">
+      <input type="text" id="search" placeholder="Product search karo...">
+      <div class="products-grid" id="products"></div>
+    </section>
+  </main>
 
-  <!-- ===== CONTACT ===== -->
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <div class="section-box">
-      <ul>
-        <li>Email: mdjishancse@gmail.com</li>
-        <li>Phone: +91 9304940805</li>
-        <li>Twitter id: @mdjishan8343</li>
-         <li>Instagram id:  md._.jishan.07</li>
-         <li>Location: West Bengal, Asansol India</li>
-         <li>TResponse Time: Usually within 24 hours</li>
-         </ul>
+  <!-- Modals -->
+  <div class="modal" id="profile-modal">
+    <div class="modal-box">
+      <h3>Profile Login / Save</h3>
+      <form id="profile-form">
+        <input id="u-name" type="text" placeholder="Naam" required>
+        <input id="u-phone" type="text" placeholder="Phone" required>
+        <input id="u-email" type="email" placeholder="Email (optional)">
+        <input id="u-photo" type="url" placeholder="Photo URL" value="https://i.ibb.co/rtfzYsd1">
+        <button type="submit">Save / Login</button>
+      </form>
     </div>
-    <form action="mailto:mdjishancse@gmail.com" method="POST" class="contact-form">
-     <label for="name">Send me a message</label>
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
-      <label for="phone">Your Phone</label>
-      <input type="tel" id="phone" name="phone" required>
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="_replyto" required>
-      <label for="name">Subject</label>
-      <input type="text" id="Subject" name="name" required>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-  </section>
+  </div>
 
-  <footer>
-    <p>© 2025 Md Jishan | All Rights Reserved</p>
-  </footer>
+  <div class="modal" id="cart-modal">
+    <div class="modal-box">
+      <h3>Your Cart</h3>
+      <div id="cart-list"></div>
+      <button id="checkout-btn">Checkout</button>
+      <button onclick="closeModal('cart')">Close</button>
+    </div>
+  </div>
+
+  <div class="modal" id="checkout-modal">
+    <div class="modal-box">
+      <h3>Checkout</h3>
+      <form id="checkout-form">
+        <input id="buyer-name" type="text" placeholder="Naam" required>
+        <input id="buyer-phone" type="text" placeholder="Phone" required>
+        <input id="buyer-email" type="email" placeholder="Email (optional)">
+        <textarea id="buyer-address" placeholder="Address"></textarea>
+        <button type="submit">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="support-modal">
+    <div class="modal-box">
+      <h3>Support / Complaint</h3>
+      <textarea id="support-msg" placeholder="Apna message yahan likho"></textarea>
+      <button id="send-support">Send</button>
+      <button onclick="closeModal('support')">Close</button>
+    </div>
+  </div>
+
+  <div class="modal" id="review-modal">
+    <div class="modal-box">
+      <h3>Product Reviews</h3>
+      <div id="reviews-list"></div>
+      <button onclick="closeModal('review')">Close</button>
+    </div>
+  </div>
 
   <script src="scripts.js"></script>
 </body>
