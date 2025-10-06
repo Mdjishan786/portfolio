@@ -27,6 +27,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 .logo {
   font-size: 1.6rem;
@@ -39,6 +40,10 @@ a:hover {
 .navbar a {
   margin: 0 15px;
   font-weight: 500;
+  transition: color 0.3s;
+}
+.navbar a:hover {
+  color: #ff4081;
 }
 .navbar a.active {
   border-bottom: 2px solid #ff4081;
@@ -75,7 +80,7 @@ a:hover {
 }
 @keyframes light-slide {
   0%   { left: -50%; }
-  50%  { left: 50%; }
+  50%  { left: 100%; }
   100% { left: -50%; }
 }
 .profile-pic {
@@ -87,6 +92,11 @@ a:hover {
 .highlight {
   color: #ff4081;
 }
+.tagline {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-top: -10px;
+}
 .buttons .btn {
   display: inline-block;
   margin: 10px;
@@ -94,11 +104,12 @@ a:hover {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .btn.primary {
-  background: linear-gradient(90deg, #00bcd4, #ff4081);
+  background: linear-gradient(45deg, #00bcd4, #ff4081);
   color: #ffffff;
+  border: none;
 }
 .btn.outline {
   border: 2px solid #00bcd4;
@@ -107,191 +118,546 @@ a:hover {
 }
 .btn:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
 }
 
-/* ===== SECTIONS ===== */
+/* ===== GENERAL SECTION STYLES ===== */
 .section {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
-.about {
-  /* additional about styles if needed */
+.section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #ff4081;
+  display: inline-block;
+  padding-bottom: 5px;
 }
-
-/* ===== SECTION BOX ===== */
 .section-box {
-  background: #2c2c2c;
-  border: 1px solid #00bcd4;
-  border-radius: 20px;
-  padding: 25px;
-  margin-top: 25px;
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  padding: 20px;
+  background: #282828;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
-.section-box:hover {
-  transform: rotateY(8deg) scale(1.03);
-  border-color: #ff4081;
-  box-shadow: 0 0 20px #ff4081;
+.section-box h3 {
+  color: #ff4081;
+  margin-top: 0;
 }
 .section-box ul {
   list-style: none;
   padding: 0;
 }
-.section-box li {
-  display: inline-block;
-  margin: 5px;
-  background: linear-gradient(90deg, #00bcd4, #ff4081);
-  color: #ffffff;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-weight: 600;
-  transition: transform 0.3s, background 0.3s;
-}
-.section-box li:hover {
-  transform: rotate(8deg) scale(1.1);
-  background: linear-gradient(90deg, #ff4081, #00bcd4);
+.section-box ul li {
+  margin-bottom: 10px;
+  border-left: 3px solid #00bcd4;
+  padding-left: 10px;
 }
 
-/* ===== SKILLS ===== */
+/* **************************************** */
+/* NEW PERSONAL DETAILS CARD STYLES START  */
+/* **************************************** */
+
+.personal-details-grid {
+    display: grid;
+    /* Grid layout with at least 3 columns for desktop */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+    margin-top: 30px;
+    background-color: #282828; /* Base color for the container */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.detail-card {
+    background-color: #333333; /* Inner card background */
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Subtle glow on hover and slight lift */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.detail-card:hover {
+    transform: translateY(-3px);
+    /* Cyan and Pink box shadow effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 188, 212, 0.4);
+}
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* Matching the pink/cyan glow from the image */
+    background: radial-gradient(circle, rgba(255, 64, 129, 0.2) 0%, rgba(0, 188, 212, 0.1) 100%); 
+    color: #ff4081; /* Icon color (Pink highlight) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    margin-right: 15px;
+    border: 1px solid rgba(255, 64, 129, 0.5);
+}
+
+/* Alternating icon colors for visual interest */
+.detail-card:nth-child(2n) .icon-circle { color: #00bcd4; border-color: rgba(0, 188, 212, 0.5); }
+
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 0.9em;
+    color: #00bcd4; /* Label color (Cyan accent) */
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.value {
+    font-size: 1em;
+    color: #f5f5f5; /* Value color (White) */
+    font-weight: 400;
+}
+
+/* *************************************** */
+/* NEW PERSONAL DETAILS CARD STYLES END   */
+/* *************************************** */
+
+/* ===== SKILLS GRID (Aapke code se liya gaya) ===== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 .skills-box {
-  background: #2c2c2c;
-  border: 1px solid #00bcd4;
-  border-radius: 15px;
+  background: #282828;
   padding: 20px;
-  text-align: center;
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
 }
 .skills-box:hover {
-  transform: rotateY(8deg) scale(1.03);
-  border-color: #ff4081;
-  box-shadow: 0 0 18px #ff4081;
-}
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
+  transform: translateY(-5px);
 }
 .skills-list span {
   display: inline-block;
-  background: linear-gradient(90deg, #00bcd4, #ff4081);
-  color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 20px;
+  background: #3a3a3a;
+  color: #00bcd4;
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 0.9em;
   font-weight: 500;
-  transition: transform 0.3s, background 0.3s;
-}
-.skills-list span:hover {
-  transform: rotate(6deg) scale(1.1);
-  background: linear-gradient(90deg, #ff4081, #00bcd4);
 }
 
-/* ===== CONTACT FORM ===== */
+/* ===== CONTACT SECTION STYLES (Badlav yahan kiye gaye hain) ===== */
+
+.contact {
+    /* Heading hatane ke baad section ki padding adjust ki gayi hai */
+    padding: 60px 20px; 
+}
+
+.contact-wrapper {
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px; 
+    max-width: 1100px;
+    margin: 0 auto; /* Margin-top 40px se 0 kiya gaya */
+    padding-top: 20px; /* Thoda top space diya gaya */
+}
+
+/* --- Contact Details (Left Side) --- */
+.contact-details-container {
+    width: 48%; 
+    color: #f1f1f1;
+}
+
+.connect-title {
+    font-size: 2.5rem;
+    color: #00bcd4; 
+    margin-bottom: 10px;
+}
+
+.connect-text {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    background-color: #282828; 
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid transparent; 
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.info-item:hover {
+    transform: translateX(5px);
+}
+
+.icon-wrapper {
+    font-size: 1.2em;
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 0.85em;
+    opacity: 0.7;
+}
+
+.value {
+    font-size: 1em;
+    font-weight: 500;
+    color: #f5f5f5;
+}
+
+/* --- Color Codes (Matching your accents) --- */
+
+.phone-color { color: #00bcd4; border: 1px solid #00bcd4; } 
+.email-color { color: #ff4081; border: 1px solid #ff4081; } 
+.location-color { color: #FFC300; border: 1px solid #FFC300; } 
+.time-color { color: #9b59b6; border: 1px solid #9b59b6; } 
+
+/* Left Border Colors */
+.phone-color-border { border-left-color: #00bcd4; }
+.email-color-border { border-left-color: #ff4081; }
+.location-color-border { border-left-color: #FFC300; }
+.time-color-border { border-left-color: #9b59b6; }
+
+
+/* --- Contact Form (Right Side) --- */
+
+.form-container {
+    width: 48%; 
+    background: #282828; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.form-container h3 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #ff4081;
+}
+
+.form-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background: #1e1e1e;
+    color: #f5f5f5;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 600px;
-  margin: auto;
-  border: 1px solid #00bcd4;
-  border-radius: 12px;
-  padding: 20px;
-  background: #2c2c2c;
-}
-input, textarea {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #00bcd4;
-  background: #1f1f1f;
-  color: #f5f5f5;
-}
-.submit-btn {
-  background: linear-gradient(90deg, #00bcd4, #ff4081);
-  color: #ffffff;
-  font-weight: 600;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-.submit-btn:hover {
-  transform: scale(1.05);
+    /* Your existing contact form styles (if any) */
 }
 
-/* ===== FOOTER ===== */
+.form-container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.send-message-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #00bcd4, #ff4081); /* Gradient Button */
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.send-message-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.01);
+}
+
+/* --- FOOTER --- */
 footer {
   text-align: center;
   padding: 20px;
-  border-top: 1px solid #00bcd4;
-  color: #bbbbbb;
+  background: #282828;
+  margin-top: 40px;
+  font-size: 0.9rem;
 }
 
-/* ===== RESPONSIVE STYLES ===== */
 
-/* Mobile-first approach */
-@media only screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .navbar a {
-    margin: 8px 0;
-  }
-  .hero {
-    padding: 80px 20px;
-  }
-  .hero h2 {
-    font-size: 1.5rem;
-  }
-  .profile-pic-container {
-    width: 150px;
-    height: 150px;
-  }
-  .section {
-    padding: 40px 10px;
-  }
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-  .contact-form {
-    padding: 15px;
-  }
-  input, textarea {
-    width: 100%;
-  }
-  footer {
-    font-size: 0.9rem;
-  }
+/* --- Media Query for Mobile View (Stacking the elements) --- */
+@media (max-width: 768px) {
+    .navbar {
+      padding: 15px 20px;
+      flex-direction: column;
+      text-align: center;
+    }
+    .nav-links {
+      margin-top: 10px;
+    }
+    .hero {
+      padding: 80px 20px;
+    }
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        /* Mobile view mein top padding ki zaroorat nahi */
+        padding-top: 0; 
+    }
+
+    .contact-details-container,
+    .form-container {
+        width: 100%;
+    }
+    
+    .personal-details-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
 }
-
-/* Tablet and larger devices */
-@media only screen and (min-width: 769px) {
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .hero {
-    padding: 100px 20px;
-  }
-  .profile-pic-container {
-    width: 180px;
-    height: 180px;
-  }
-  .section {
-    padding: 60px 20px;
-  }
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-  .contact-form {
+/* --- General Body & Container Setup --- */
+body {
+    background-color: #12121e; /* Deep dark blue/purple background */
+    color: #e0e0e0; /* Light text for contrast */
+    font-family: Arial, sans-serif;
     padding: 20px;
-  }
+    margin: 0;
+}
+
+/* --- Section Title --- */
+.section-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+/* Vibrant line effect below title */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #6a5acd, #ff69b4); /* Blue-to-pink gradient */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Education Entries Layout (Timeline Effect) --- */
+.education-section {
+    max-width: 900px; /* Limit width for better readability */
+    margin: 0 auto;
+    position: relative;
+    padding-left: 30px; /* Space for the timeline dots */
+}
+
+.education-entry {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* The dark card/box style */
+.entry-content {
+    background-color: #1c1c2b; /* Slightly lighter dark background for the card */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    flex-grow: 1;
+    margin-left: 20px; /* Space from the dot */
+}
+
+/* --- Dot Indicator (Timeline Point) --- */
+.dot-indicator {
+    position: absolute;
+    left: 0;
+    top: 5px; /* Adjust vertical position */
+    width: 15px;
+    height: 15px;
+    background-color: #6a5acd; /* Vibrant blue/purple color */
+    border-radius: 50%;
+    border: 3px solid #12121e; /* Matches body background for a 'popping out' effect */
+    z-index: 2; /* Ensures it's above the card content if needed */
+}
+
+/* --- Text Styling --- */
+.degree-title {
+    font-size: 1.5em;
+    color: #8c7ae6; /* A clear, vibrant blue/purple for the main degree */
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.institution-info {
+    color: #ff69b4; /* Vibrant pink for the university/school and dates */
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #c0c0c0; /* Slightly muted text for the description */
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* --- SGPA/Marks Styling --- */
+.sgpa-info {
+    display: flex;
+    gap: 30px; /* Space between the two SGPA items */
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.sgpa-item {
+    color: #ffffff; /* White/bright color for the label */
+}
+
+.sgpa-value {
+    color: #ffcc00; /* A distinct, bright color (like yellow) for the score itself */
+    font-weight: bold;
+}
+
+/* --- Section Title --- */
+.section-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+/* Vibrant line effect below title */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #6a5acd, #ff69b4); /* Blue-to-pink gradient */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Education Entries Layout (Timeline Effect) --- */
+.education-section {
+    max-width: 900px; /* Limit width for better readability */
+    margin: 0 auto;
+    position: relative;
+    padding-left: 30px; /* Space for the timeline dots */
+}
+
+.education-entry {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* The dark card/box style */
+.entry-content {
+    background-color: #1c1c2b; /* Slightly lighter dark background for the card */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    flex-grow: 1;
+    margin-left: 20px; /* Space from the dot */
+}
+
+/* --- Dot Indicator (Timeline Point) --- */
+.dot-indicator {
+    position: absolute;
+    left: 0;
+    top: 5px; /* Adjust vertical position */
+    width: 15px;
+    height: 15px;
+    background-color: #6a5acd; /* Vibrant blue/purple color */
+    border-radius: 50%;
+    border: 3px solid #12121e; /* Matches body background for a 'popping out' effect */
+    z-index: 2; /* Ensures it's above the card content if needed */
+}
+
+/* --- Text Styling --- */
+.degree-title {
+    font-size: 1.5em;
+    color: #8c7ae6; /* A clear, vibrant blue/purple for the main degree */
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.institution-info {
+    color: #ff69b4; /* Vibrant pink for the university/school and dates */
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #c0c0c0; /* Slightly muted text for the description */
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* --- SGPA/Marks Styling --- */
+.sgpa-info {
+    display: flex;
+    gap: 30px; /* Space between the two SGPA items */
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.sgpa-item {
+    color: #ffffff; /* White/bright color for the label */
+}
+
+.sgpa-value {
+    color: #ffcc00; /* A distinct, bright color (like yellow) for the score itself */
+    font-weight: bold;
 }
