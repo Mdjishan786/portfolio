@@ -1,146 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Md Jishan | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md Jishan | Portfolio</title>
+    <link rel="stylesheet" href="stylse.css" /> 
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar">
-    <div class="logo">Md <span>Jishan</span></div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <header class="navbar">
+        <div class="logo">Md <span>Jishan</span></div>
+        <nav class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero" id="home">
-    <div class="profile-pic-container">
-      <img src="https://i.postimg.cc/m1w3F6Lq/profile.jpg" alt="Md Jishan" class="profile-pic" />
-    </div>
-    <h1>Hi, I'm <span class="highlight">Md Jishan</span></h1>
-    <p class="tagline">Full-Stack Developer | AI/ML Explorer | Problem Solver</p>
-    <div class="buttons">
-      <a href="#projects" class="btn primary">View My Work</a>
-      <a href="#contact" class="btn outline">Get In Touch</a>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section class="section about" id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a passionate <strong>Computer Science student</strong> specializing in
-      <strong>AI & Web Development</strong>. I enjoy solving real-world problems
-      through technology and continuously improving my skills.
-    </p>
-    <div class="section-box">
-      <h3>Personal Details</h3>
-      <ul>
-        <li>Date of Birth: January 01, 2007</li>
-        <li>Gender: Male</li>
-        <li>Nationality: Indian</li>
-        <li>Religion: Islam</li>
-        <li>Category: General</li>
-        <li>PWD Status: No</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== EDUCATION ===== -->
-  <section class="section" id="education">
-    <h2>Education</h2>
-    <div class="section-box">
-      <ul>
-        <li>10th (BSEB, Patna): 55.4% — Year: 2021</li>
-        <li>Diploma (MANUU): 68.8% — Year: 2024</li>
-        <li>B.tech (KNU): 66.1% — Year: 2024-2027</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section class="section" id="skills">
-    <h2>Skills & Expertise</h2>
-    <div class="skills-grid">
-      <div class="skills-box">
-        <h3>💻 Programming Languages</h3>
-        <div class="skills-list">
-          <span>C programming language </span><span> Python </span><span>C++</span><span>Java</span><span>JavaScript</span>
+    <section class="hero" id="home">
+        <div class="profile-pic-container">
+            <img src="https://i.postimg.cc/m1w3F6Lq/profile.jpg" alt="Md Jishan" class="profile-pic" />
         </div>
-      </div>
-      <div class="skills-box">
-        <h3>🌐 Web Development</h3>
-        <div class="skills-list">
-          <span>HTML</span><span>CSS</span><span>React</span><span>Node.js</span>
+        <h1>Hi, I'm <span class="highlight">Md Jishan</span></h1>
+        <p class="tagline">Full-Stack Developer | AI/ML Explorer | Problem Solver</p>
+        <div class="buttons">
+            <a href="#projects" class="btn primary">View My Work</a>
+            <a href="#contact" class="btn outline">Get In Touch</a>
         </div>
-      </div>
-      <div class="skills-box">
-        <h3>🤖 AI / ML Tools</h3>
-        <div class="skills-list">
-          <span>NumPy</span><span>Pandas</span><span>TensorFlow</span><span>Scikit-learn</span>
+    </section>
+
+    <section class="section about" id="about">
+        <h2>About Me</h2>
+        <p>
+            I'm a passionate <strong>Computer Science student</strong> specializing in
+            <strong>AI & Web Development</strong>. I enjoy solving real-world problems
+            through technology and continuously improving my skills.
+        </p>
+
+        <div class="personal-details-grid">
+            
+            <div class="detail-card">
+                <div class="icon-circle"><i class="fas fa-birthday-cake"></i></div>
+                <div class="detail-content">
+                    <span class="label">Date of Birth:</span>
+                    <span class="value">January 01, 2007</span> 
+                </div>
+            </div>
+            
+            <div class="detail-card">
+                <div class="icon-circle"><i class="fas fa-male"></i></div>
+                <div class="detail-content">
+                    <span class="label">Gender:</span>
+                    <span class="value">Male</span>
+                </div>
+            </div>
+            
+            <div class="detail-card">
+                <div class="icon-circle"><i class="fas fa-flag-usa"></i></div>
+                <div class="detail-content">
+                    <span class="label">Nationality:</span>
+                    <span class="value">Indian</span>
+                </div>
+            </div>
+            
+            <div class="detail-card">
+                <div class="icon-circle"><i class="fas fa-hands-helping"></i></div>
+                <div class="detail-content">
+                    <span class="label">Religion:</span>
+                    <span class="value">Islam</span>
+                </div>
+            </div>
+            
+            <div class="detail-card">
+                <div class="icon-circle"><i class="fas fa-users"></i></div>
+                <div class="detail-content">
+                    <span class="label">Category:</span>
+                    <span class="value">General</span>
+                </div>
+            </div>
+            
+            <div class="detail-card">
+                <div class="icon-circle"><i class="fas fa-wheelchair"></i></div>
+                <div class="detail-content">
+                    <span class="label">PWD Status:</span>
+                    <span class="value">No</span>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="skills-box">
-        <h3>🛠 Other Tools</h3>
-        <div class="skills-list">
-          <span>Git</span><span>VS Code</span><span>Figma</span><span>Ms office</span><span>Data entry</span>
+    </section>
+ <section class="education-section" id="education">
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-entry">
+            <div class="dot-indicator"></div>
+            <div class="entry-content">
+                <h3 class="degree-title">B.Tech in Computer Science Engineering (Data Science)</h3>
+                <p class="institution-info">Kazi Nazrul University | 2024 - 2027</p>
+                <p class="description">Currently pursuing my Bachelor's degree with specialization in Data Science. Maintaining excellent academic performance with a strong focus on practical application of theoretical concepts.</p>
+                <div class="sgpa-info">
+                    <span class="sgpa-item">1st Semester SGPA: <span class="sgpa-value">5.08</span></span>
+                    <span class="sgpa-item">2nd Semester SGPA: <span class="sgpa-value">6.61</span></span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="section-box">
-      <ul>
-        <li>Student data: Online Hostel Management System using HTML, CSS, JavaScript</li>
-        <li>Product cell:AN EXPLORATION OF SMARTPHONES, AND GADGETS WEBSITE USING WORDPRESS-OVERVIEW</li>
-      </ul>
-    </div>
-  </section>
+        <div class="education-entry">
+            <div class="dot-indicator"></div>
+            <div class="entry-content">
+                <h3 class="degree-title">Diploma in Computer Science Engineering</h3>
+                <p class="institution-info">Maulana Azad National Urdu University| 2021 - 2024</p>
+                <p class="description">Completed a three-year Diploma program in Computer Science Engineering, focusing on core subjects like Data Structures, Networking, and Database Management.</p>
+                <div class="sgpa-info">
+                    <span class="sgpa-item">Aggregate Percentage: <span class="sgpa-value">68.8%</span></span>
+                </div>
+            </div>
+        </div>
 
-  <!-- ===== CONTACT ===== -->
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <div class="section-box">
-      <ul>
-        <li>Email: mdjishancse@gmail.com</li>
-        <li>Phone: +91 9304940805</li>
-        <li>Twitter id: @mdjishan8343</li>
-         <li>Instagram id:  md._.jishan.07</li>
-         <li>Location: West Bengal, Asansol India</li>
-         <li>TResponse Time: Usually within 24 hours</li>
-         </ul>
-    </div>
-    <form action="mailto:mdjishancse@gmail.com" method="POST" class="contact-form">
-     <label for="name">Send me a message</label>
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
-      <label for="phone">Your Phone</label>
-      <input type="tel" id="phone" name="phone" required>
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="_replyto" required>
-      <label for="name">Subject</label>
-      <input type="text" id="Subject" name="name" required>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-  </section>
+        <div class="education-entry">
+            <div class="dot-indicator"></div>
+            <div class="entry-content">
+                <h3 class="degree-title">Secondary Education (10th Class)</h3>
+                <p class="institution-info">Bihar School Examination Board / BSEB| 2020</p>
+                <p class="description">Completed Secondary Education with strong results, developing foundational knowledge across Mathematics, Science, and Social Studies.</p>
+                <div class="sgpa-info">
+                    <span class="sgpa-item">Aggregate Percentage: <span class="sgpa-value">55.4%</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section class="section" id="skills">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="skills-grid">
+            
+            <div class="skills-box">
+                <h3 class="skill-category-title"><i class="fas fa-code"></i> Programming Languages</h3>
+                <div class="skills-list">
+                    <span>C programming language</span><span>Python</span><span>C++</span><span>Java</span>
+                    <span>SQL</span>
+                </div>
+            </div>
+            
+            <div class="skills-box">
+                <h3 class="skill-category-title"><i class="fas fa-globe-americas"></i> Web Development</h3>
+                <div class="skills-list">
+                    <span>HTML</span><span>CSS</span><span>React</span><span>Node.js</span>
+                </div>
+            </div>
+            
+            <div class="skills-box">
+                <h3 class="skill-category-title"><i class="fas fa-brain"></i> Data Science & AI</h3>
+                <div class="skills-list">
+                    <span>Machine Learning</span>
+                    <span>NumPy</span>
+                    <span>TensorFlow</span><span>Data Analysis</span>
+                </div>
+            </div>
+            
+            <div class="skills-box">
+                <h3 class="skill-category-title"><i class="fas fa-gamepad"></i> Game Development</h3>
+                <div class="skills-list">
+                    <span>Unity (C#)</span><span>Blender</span>
+                </div>
+            </div>
+            
+            <div class="skills-box">
+                <h3 class="skill-category-title"><i class="fas fa-tools"></i> Tools & Software</h3>
+                <div class="skills-list">
+                    <span>Git</span><span>VS Code</span><span>Figma</span>
+                </div>
+            </div>
+            
+            <div class="skills-box">
+                <h3 class="skill-category-title"><i class="fas fa-asterisk"></i> Other Skills</h3>
+                <div class="skills-list">
+                    <span>Ms Office</span><span>Data Entry</span><span>Problem Solving</span>
+                </div>
+            </div>
 
-  <footer>
-    <p>© 2025 Md Jishan | All Rights Reserved</p>
-  </footer>
+        </div>
+    </section>
+<section class="section" id="projects">
+    <h2>Featured Projects</h2>
+    
+    <div class="projects-grid">
+    
+        <div class="project-card">
+            <h3>Online Hostel Management System</h3>
+            <p>Student data managment</p>
+            
+            <div class="project-tags">
+                <span>HTML</span>
+                <span>Css</span>
+                <span>Paython</span>
+                <span>Javascript</span>
+                <span>Paython</span>
+                <span>My sql</span>
+                
+            </div>
+            
+            <div class="project-links">
+                <a href="#" class="link-demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="#" class="link-source"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <h3>AN EXPLORATION OF SMARTPHONES, AND GADGETS WEBSITE USING WORDPRESS-OVERVIEW</h3>
+            <p>Online electronick product sell</p>
+            
+            <div class="project-tags">
+                <span>Wordpress</span>
+                <span>Html</span>
+                <span>Css</span>
+                <span>Paython</span>
+            </div>
+        <div class="project-links">
+                <a href="#" class="link-demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="#" class="link-source"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+        </div>
 
-  <script src="scripts.js"></script>
+        </div>
+</section>
+    <section class="section" id="contact">
+        <div class="contact-wrapper">
+            
+            <div class="contact-details-container">
+                <h3 class="connect-title">Let's Connect!</h3>
+                <p class="connect-text">
+                    I'm always excited to collaborate on interesting projects, discuss new opportunities, or simply connect with fellow developers and tech enthusiasts. Feel free to reach out through any of the channels below!
+                </p>
+
+                <div class="info-item phone-color-border">
+                    <div class="icon-wrapper phone-color">
+                        <i class="fas fa-phone-alt"></i> 
+                    </div>
+                    <div class="text-content">
+                        <span class="label">Phone:</span>
+                        <span class="value">+91 9304940805</span>
+                    </div>
+                </div>
+
+                <div class="info-item email-color-border">
+                    <div class="icon-wrapper email-color">
+                        <i class="fas fa-envelope"></i> 
+                    </div>
+                    <div class="text-content">
+                        <span class="label">Email:</span>
+                        <span class="value">mdjishancse@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="info-item location-color-border">
+                    <div class="icon-wrapper location-color">
+                        <i class="fas fa-map-marker-alt"></i> 
+                    </div>
+                    <div class="text-content">
+                        <span class="label">Location:</span>
+                        <span class="value">West Bengal, Asansol India</span>
+                    </div>
+                </div>
+
+                <div class="info-item time-color-border">
+                    <div class="icon-wrapper time-color">
+                        <i class="fas fa-clock"></i> 
+                    </div>
+                    <div class="text-content">
+                        <span class="label">Response Time:</span>
+                        <span class="value">Usually within 24 hours</span>
+                    </div>
+                </div>
+            </div>
+            <form action="https://formspree.io/f/your_form_id" method="POST" class="contact-form form-container">
+                <h3>Send Me a Message</h3>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="phone">Your Phone</label>
+                <input type="tel" id="phone" name="phone">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="_replyto" required>
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="_subject" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit" class="submit-btn send-message-btn">Send Message</button> 
+                <p style="font-size: small; text-align: center; color: #bbb;">(Note: This form needs a service like Formspree to work)</p>
+            </form>
+            </div> </section>
+
+    <footer>
+        <p>© 2025 Md Jishan | All Rights Reserved</p>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
